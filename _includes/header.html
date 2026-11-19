@@ -13,7 +13,7 @@
           {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
-            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.nav_title | default: site.title }}</a>
+            <a title="{%- if site.nav_link_title -%}{{ site.nav_link_title }}{%- elsif site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.nav_title | default: site.title }}</a>
           {%- endif -%}
         </div>
         {%- if site.search.provider -%}
