@@ -1,0 +1,74 @@
+///
+// Skin: Blue-grey
+// The theme's Dark skin with dark blue-grey in place of black, matched to the banner's slate blue.
+// Based on _dark.scss by Tian Qi; only the marked colours differ.
+///
+
+// main colors
+$main-color-1:     #ff9500;           // links and highlights (unchanged from Dark)
+$text-color-1:     rgba(#fff, .8);
+
+$main-color-2:     #ff006a;
+$text-color-2:     rgba(#fff, .8);
+
+$main-color-3:     #273f63;           // nav bar and footer: slate blue (Dark: #202020)
+$text-color-3:     rgba(#fff, .85);
+
+$main-color-theme-light: rgba(#000, .8);
+$main-color-theme-dark:  rgba(#fff, .8);
+
+// page background
+$background-color: #1c2b41;           // dark blue-grey (Dark: #121212)
+
+// text colors
+$text-color-theme-light-d: #000;
+$text-color-theme-light:   #222;
+$text-color-theme-light-l: #888;
+
+$text-color-theme-dark-d:  rgba(#fff, .85);
+$text-color-theme-dark:    rgba(#fff, .75);   // a touch brighter than Dark's .7 on the lighter background
+$text-color-theme-dark-l:  rgba(#fff, .55);
+
+$text-color-d:     $text-color-theme-dark-d;
+$text-color:       $text-color-theme-dark;
+$text-color-l:     $text-color-theme-dark-l;
+
+$text-background-color: rgba(#fff, .05);
+
+// header and footer colors
+$header-text-color: $text-color-3;
+$header-background: $main-color-3;
+
+$footer-text-color: $text-color-3;
+$footer-background: $main-color-3;
+
+// border and shadow colors
+$border-color:     mix(#fff, $background-color, 20%);
+$border-color-l:   mix(#fff, $background-color, 10%);
+$decorate-color:   rgba(#fff, .1);
+$mask-color:       rgba(#141a23, .9);  // search overlay: blue-black (Dark: black)
+$select-color:     rgba($main-color-1, .5);
+
+// function colors
+$green:           #5baa34;
+$blue:            #1c7cd4;
+$yellow:          #c9771f;
+$red:             #da3d45;
+$text-color-function: rgba(#fff, .8);
+
+// logo colors
+$mail-color:       #0072c5;
+$facebook-color:   #4267b2;
+$twitter-color:    #1da1f2;
+$weibo-color:      #e6162d;
+$google-plus-color:#ea4335;
+$telegram-color:   #32afed;
+$medium-color:     #000;
+$zhihu-color:      #0084ff;
+$douban-color:     #42bd56;
+$linkedin-color:   #1074af;
+$github-color:     #000;
+$npm-color:        #fff;
+
+// highlight colors
+@import "skins/highlight/tomorrow-night";

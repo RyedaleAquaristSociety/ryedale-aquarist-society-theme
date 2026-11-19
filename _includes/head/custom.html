@@ -1,0 +1,5 @@
+<!-- start custom head snippets -->
+{%- capture _seo_tags -%}{% seo title=false %}{%- endcapture -%}
+{{ _seo_tags | replace: '<meta name="twitter:description" property="og:description" content=', '<meta property="og:description" content=' }}
+
+<!-- end custom head snippets -->

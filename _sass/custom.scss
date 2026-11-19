@@ -1,0 +1,396 @@
+/* start custom scss snippet */
+
+// Banner title
+.article__header--overlay h1 {
+  color: #ffffff;
+  font-size: 3.5rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  @media (max-width: 819.98px) {
+    font-size: 2.75rem;
+    line-height: 1.2;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+}
+
+// Line under the title
+.article__header--overlay .overlay__excerpt {
+  font-style: italic;
+  font-weight: bold;
+  color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+// Society logo in the top-left of the nav bar
+.header__brand > .header__logo {
+  height: 3.5rem;
+  width: auto;
+  margin-right: 0.75rem;
+  @include media-breakpoint-down(md) {
+    height: 2.4rem;
+  }
+}
+
+// Society logo above the banner title (pages with header_logo set like the home page)
+.hero__logo {
+  display: block;
+  width: 14rem;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  @include media-breakpoint-down(md) {
+    width: 10rem;
+  }
+}
+
+.article__header--overlay .overlay {
+  background-position: 50% 56%;
+  min-height: 28rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  @include media-breakpoint-down(md) {
+    min-height: 20rem;
+  }
+}
+
+.facebook-events {
+  text-align: center;
+  margin: 2rem 0;
+  iframe {
+    max-width: 100%;
+  }
+}
+
+// News titles in the homepage "Latest News" section
+.article__content .article-list .item__header {
+  font-size: 1.25rem;
+  margin-top: 0;
+  border-bottom: 1px solid $border-color-l;
+}
+
+.article__content .article-list.items--divided > .item {
+  border-bottom: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.footer {
+  padding-top: 0.75rem !important;    // !important: the theme sets it with a py-4 utility class
+  padding-bottom: 0.75rem !important;
+}
+// hide the social-icons row while no social links are set up (it comes back if any are added)
+.footer__author-links:not(:has(li)) {
+  display: none;
+}
+.footer .main:not(:has(.author-links li)) .site-info {
+  margin-top: 0;
+}
+// Footer email and Facebook icons
+.root[data-is-touch=false] .author-links > ul > li > .mail-button:hover,
+.root[data-is-touch=false] .author-links > ul > li > .facebook-button:hover,
+.root[data-is-touch] .author-links > ul > li > .mail-button.focus,
+.root[data-is-touch] .author-links > ul > li > .facebook-button.focus,
+.author-links > ul > li > .mail-button:focus-visible,
+.author-links > ul > li > .facebook-button:focus-visible {
+  background-color: #fff;
+}
+
+// underline links inside paragraphs and lists of page text so they don't rely on colour alone
+.article__content > p a,
+.article__content > ul > li a,
+.article__content > ol > li a,
+.event-banner > p a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.skip-link,
+.skip-link:link,
+.skip-link:visited {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #14122a;
+  font-weight: bold;
+  transition: none;
+  &:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+}
+
+#main-content:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.article__header--overlay .article__info {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  .right-col {
+    float: none;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+::selection {
+  background: #5ed6b4;
+  color: #14122a;
+}
+
+.navigation__item > a,
+.item__readmore {
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.navigation__item > a {
+  font-size: 1.125rem;
+}
+
+.navigation {
+  overflow: visible;
+
+  & > ul {
+    flex-wrap: wrap;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+
+    &.navigation--open {
+      display: block;
+    }
+
+    & > ul {
+      flex-direction: column;
+      align-items: stretch;
+      padding-bottom: 0.5rem;
+    }
+
+    .navigation__item {
+      margin: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .navigation__item > a {
+      display: block;
+      padding: 0.75rem 0;
+    }
+
+    .navigation__item--active > a {
+      font-weight: bold;
+    }
+  }
+}
+
+.header__title > .menu-button {
+  display: none;
+  margin-left: map-get($spacers, 2);
+  @include media-breakpoint-down(md) {
+    display: flex;
+  }
+}
+
+.header__title > .header__brand {
+  min-width: 0;
+
+  & > a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 379.98px) {
+  .header .header__brand > a {
+    font-size: 1rem;
+  }
+
+  .header .header__brand > .header__logo {
+    height: 2rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 339.98px) {
+  .header .header__brand > a {
+    font-size: 0.9rem;
+  }
+
+  .header .header__brand > .header__logo {
+    height: 1.75rem;
+    margin-right: 0.4rem;
+  }
+}
+
+@media (max-width: 819.98px) {
+  .header .main {
+    flex-direction: column;
+  }
+
+  .header__title {
+    height: auto;
+    margin-right: 0;
+
+    & > .header__brand {
+      height: map-get($layout, header-height-sm);
+    }
+
+    & > .search-button {
+      display: flex;
+    }
+  }
+
+  .header__brand > .header__logo {
+    height: 2.4rem;
+  }
+
+  .navigation > ul {
+    height: auto;
+    padding-bottom: 4px;
+    margin: -4px 0 0 0;
+
+    .search-button,
+    li:has(> .search-button) {
+      display: none;
+    }
+  }
+}
+
+.layout--archive > .site-tags {
+  margin-top: 2rem;
+
+  .menu {
+    gap: 0.4rem;
+  }
+
+  .tag-button {
+    border-radius: 0.4rem;
+  }
+}
+
+.search-box > input,
+.search__cancel {
+  border-radius: 0.4rem;
+}
+
+.article__content {
+  font-size: 1.125rem;
+}
+
+.footer .site-info {
+  font-size: 0.8rem;
+}
+
+.article__content > :is(figure, div, p:has(> img:only-child)):first-child {
+  margin-top: 3.5rem;
+}
+
+.event-banner {
+  margin-bottom: 2.5rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid $main-color-1;
+  border-radius: 0.6rem;
+  background: rgba($main-color-1, 0.08);
+  text-align: center;
+  @include media-breakpoint-down(md) {
+    padding: 0.6rem 0.75rem;
+  }
+
+  & > h2 {
+    margin-top: 0;
+    padding-bottom: 0;
+    border-bottom-width: 0;
+    font-size: 1.5rem;
+    @include media-breakpoint-down(md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  & > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.logo-history {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  @include media-breakpoint-down(md) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
+  }
+
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    height: 120px;
+    width: auto;
+    margin: 0 auto;
+    @include media-breakpoint-down(md) {
+      height: auto;
+      max-width: 100%;
+      max-height: 120px;
+    }
+  }
+
+  figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: $text-color-l;
+  }
+}
+
+.item__description,
+.item__description .article__content {
+  font-size: 1.125rem;
+}
+
+.article-list .article__info {
+  font-size: 1rem;
+}
+
+.layout--archive .article-list {
+  .item__header {
+    font-size: 1.125rem;
+  }
+
+  .item__meta {
+    font-size: 1rem;
+  }
+}
+
+/* end custom scss snippet */

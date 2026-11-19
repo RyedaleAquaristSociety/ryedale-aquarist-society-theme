@@ -1,0 +1,65 @@
+{%- assign _tag_max_size = 1 -%}
+{%- assign _tag_min_size = 1 -%}
+{%- assign _tag_cur_size = 1 -%}
+{%- assign _tags = site.tags | sort -%}
+{%- for _tag in _tags -%}
+  {%- assign _tag_cur_size = _tag[1].size -%}
+  {%- if _tag_cur_size > _tag_max_size -%}
+    {%- assign _tag_max_size =  _tag_cur_size -%}
+  {%- endif -%}
+  {%- if _tag_cur_size < _tag_min_size -%}
+    {%- assign _tag_min_size = _tag_cur_size -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign _tag_gap_size =  _tag_max_size | minus: _tag_min_size | plus: 1 | divided_by: 4 -%}
+{%- if _tag_gap_size < 1 -%}
+  {%- assign _tag_gap_size = 1 -%}
+{%- endif -%}
+<div class="site-tags js-tags">
+  <ul class="menu">
+    <li>
+      <button type="button" class="button button--secondary button--pill tag-button tag-button--all" data-encode="">
+        Show All<span class="tag-button__count">{{ site.posts | size }}</span>
+      </button>
+    </li>
+    {%- assign _filter_categories = "news:News,fish:Articles,club:Club" | split: ',' -%}
+    {%- for _filter_category in _filter_categories -%}
+      {%- assign _filter_parts = _filter_category | split: ':' -%}
+      {%- assign _filter_key = _filter_parts | first -%}
+      {%- assign _filter_label = _filter_parts | last -%}
+      {%- assign _filter_posts = site.categories[_filter_key] -%}
+      {%- if _filter_posts.size > 0 -%}
+      <li><button type="button" class="button button--pill tag-button tag-button-{{ forloop.index }}" data-encode="{{ _filter_key }}">
+          <span>{{ _filter_label }}</span><span class="tag-button__count">{{ _filter_posts.size }}</span>
+        </button>
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for _tag in _tags -%}
+      {%- assign _tag_cur_size = _tag[1].size -%}
+      {%- assign _tag_min_1 = _tag_min_size -%}
+      {%- assign _tag_max_1 = _tag_min_1 | plus: _tag_gap_size -%}
+      {%- assign _tag_min_2 = _tag_max_1 -%}
+      {%- assign _tag_max_2 = _tag_min_2 | plus: _tag_gap_size -%}
+      {%- assign _tag_min_3 = _tag_max_2 -%}
+      {%- assign _tag_max_3 = _tag_min_3 | plus: _tag_gap_size -%}
+      {%- assign _tag_min_4 = _tag_max_3 -%}
+      {%- assign _tag_max_4 = _tag_min_4 | plus: _tag_gap_size -%}
+      {%- if _tag_cur_size >= _tag_min_1 and _tag_cur_size < _tag_max_1 -%}
+        {%- assign _c_index = 1 -%}
+      {%- elsif _tag_cur_size >= _tag_min_2 and _tag_cur_size < _tag_max_2 -%}
+        {%- assign _c_index = 2 -%}
+      {%- elsif _tag_cur_size >= _tag_min_3 and _tag_cur_size < _tag_max_3 -%}
+        {%- assign _c_index = 3 -%}
+      {%- elsif _tag_cur_size >= _tag_min_4 and _tag_cur_size < _tag_max_4 -%}
+        {%- assign _c_index = 4 -%}
+      {%- else -%}
+        {%- assign _c_index = 4 -%}
+      {%- endif -%}
+      <li><button type="button" class="button button--pill tag-button tag-button-{{ _c_index }}" data-encode="{{ _tag[0] | strip | url_encode }}">
+          <span>{{ _tag[0] | strip }}</span><span class="tag-button__count">{{ _tag[1].size }}</span>
+        </button>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
