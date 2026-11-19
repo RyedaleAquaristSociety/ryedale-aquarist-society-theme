@@ -51,6 +51,7 @@ Pin the theme to a tag. A change to the theme reaches a site only when that site
 | `nav_title` | `_config.yml` | shorter title beside the nav logo; defaults to `title` |
 | `nav_logo` | `_config.yml` | image beside the site title in the nav; defaults to `/assets/images/logo/ryedale-logo-indigo.png` |
 | `header_logo` | page front matter | logo above the banner title on that page |
+| `title_html`, `excerpt_html` | page front matter | banner title and subtitle with HTML such as `<br>`; the plain `title` and `excerpt` still feed the browser tab, search and sharing |
 | `_data/navigation.yml` | site | the nav links |
 | `_sass/site.scss` | site | extra styles for that site only, loaded after the theme's own |
 

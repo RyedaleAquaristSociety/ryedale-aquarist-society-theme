@@ -155,7 +155,9 @@ layout: base
                     {%- include article-info.html article=page semantic=false -%}
                     {%- comment -%} Banner subtext: pages only (e.g. the home tagline). Posts get an automatic
                         excerpt from their first paragraph, which would just repeat the article below. {%- endcomment -%}
-                    {%- if page.excerpt and page.collection != 'posts' -%}
+                    {%- if page.excerpt_html -%}
+                      <p class="overlay__excerpt">{{ page.excerpt_html }}</p>
+                    {%- elsif page.excerpt and page.collection != 'posts' -%}
                       <p class="overlay__excerpt">{{ page.excerpt | strip_html | strip_newlines | strip | truncate: _article_header_excerpt_truncate }}</p>
                     {%- endif -%}
                     {%- if page.article_header.actions -%}
