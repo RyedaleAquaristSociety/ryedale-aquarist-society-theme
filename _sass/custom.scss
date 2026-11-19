@@ -248,7 +248,7 @@
   }
 }
 
-@media (max-width: 819.98px) {
+@mixin header-stacked {
   .header .main {
     flex-direction: column;
   }
@@ -280,6 +280,10 @@
       display: none;
     }
   }
+}
+
+@media (max-width: 819.98px) {
+  @include header-stacked;
 }
 
 .layout--archive > .site-tags {
