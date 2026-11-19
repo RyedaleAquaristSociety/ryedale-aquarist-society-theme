@@ -48,6 +48,7 @@ Pin the theme to a tag. A change to the theme reaches a site only when that site
 | setting | where | what it does |
 |---|---|---|
 | `text_skin` | `_config.yml` | `ryedale` for the main site, `event` for the Open Event site |
+| `nav_title` | `_config.yml` | shorter title beside the nav logo; defaults to `title` |
 | `nav_logo` | `_config.yml` | image beside the site title in the nav; defaults to `/assets/images/logo/ryedale-logo-indigo.png` |
 | `header_logo` | page front matter | logo above the banner title on that page |
 | `_data/navigation.yml` | site | the nav links |
