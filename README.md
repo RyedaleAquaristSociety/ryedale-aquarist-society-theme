@@ -57,7 +57,7 @@ run `bundle update sass-embedded`.
 | `nav_logo` | `_config.yml` | image beside the site title in the nav; defaults to `/assets/images/logo/ryedale-logo-indigo.png` |
 | `header_logo` | page front matter | logo above the banner title on that page |
 | `title_html`, `excerpt_html` | page front matter | banner title and subtitle with HTML such as `<br>`; the plain `title` and `excerpt` still feed the browser tab, search and sharing |
-| `_data/navigation.yml` | site | the nav links |
+| `_data/navigation.yml` | site | the nav links; add `new_window: true` to an item to open it in a new window |
 | `_sass/site.scss` | site | extra styles for that site only, loaded after the theme's own |
 
 Any file a site has at the same path as a theme file replaces the theme's copy.
