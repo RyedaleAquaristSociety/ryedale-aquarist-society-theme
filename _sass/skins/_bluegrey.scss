@@ -1,3 +1,4 @@
+@use "sass:color";
 ///
 // Skin: Blue-grey
 // The theme's Dark skin with dark blue-grey in place of black, matched to the banner's slate blue.
@@ -43,8 +44,8 @@ $footer-text-color: $text-color-3;
 $footer-background: $main-color-3;
 
 // border and shadow colors
-$border-color:     mix(#fff, $background-color, 20%);
-$border-color-l:   mix(#fff, $background-color, 10%);
+$border-color:     color.mix(#fff, $background-color, 20%);
+$border-color-l:   color.mix(#fff, $background-color, 10%);
 $decorate-color:   rgba(#fff, .1);
 $mask-color:       rgba(#141a23, .9);  // search overlay: blue-black (Dark: black)
 $select-color:     rgba($main-color-1, .5);

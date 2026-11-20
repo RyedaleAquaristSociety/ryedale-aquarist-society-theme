@@ -43,6 +43,10 @@ plugins:
 
 Pin the theme to a tag. A change to the theme reaches a site only when that site's tag is moved on.
 
+From v1.1.0 the Sass uses the `sass:math`, `sass:map` and `sass:color` modules, so a site needs
+Dart Sass 1.79 or newer (`sass-embedded` 1.79+). If a local build fails with "Undefined function",
+run `bundle update sass-embedded`.
+
 ## What a site can set
 
 | setting | where | what it does |

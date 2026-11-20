@@ -1,3 +1,4 @@
+@use "sass:color";
 ///
 // Skin: Forest
 // Author: Tian Qi
@@ -44,7 +45,7 @@ $footer-background: $main-color-3;
 
 // border and shadow colors
 $border-color:     #3e758f;
-$border-color-l:   mix(#000, $background-color, 10%);
+$border-color-l:   color.mix(#000, $background-color, 10%);
 $decorate-color:   rgba(#bb6170, .15);
 $mask-color:       rgba(#000, .9);
 $select-color:     rgba($main-color-1, .5);
