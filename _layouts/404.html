@@ -7,7 +7,7 @@ show_title: false
   <div class="sign">
     <p class="sign__code" aria-hidden="true">404</p>
     <p>Sorry, we couldn't find that page.</p>
-    <p class="sign__links"><a href="{{ '/' | relative_url }}">Go to the home page</a> or <a href="{{ '/news.html' | relative_url }}">see the latest news</a>.</p>
+    <p class="sign__links"><a href="{{ '/' | relative_url }}">Go to the home page</a>{%- if site.not_found_link.url and site.not_found_link.text %} or <a href="{{ site.not_found_link.url | relative_url }}">{{ site.not_found_link.text }}</a>{%- endif -%}.</p>
   </div>
 </div>
 

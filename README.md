@@ -55,6 +55,7 @@ run `bundle update sass-embedded`.
 | `nav_title` | `_config.yml` | shorter title beside the nav logo; defaults to `title` |
 | `nav_link_title` | `_config.yml` | hover text on the nav title link; defaults to `description` |
 | `nav_logo` | `_config.yml` | image beside the site title in the nav; defaults to `/assets/images/logo/ryedale-logo-indigo.png` |
+| `not_found_link` | `_config.yml` | a second link on the 404 page after "Go to the home page", given as `url` and `text`; left out, the page offers the home page only |
 | `header_logo` | page front matter | logo above the banner title on that page |
 | `title_html`, `excerpt_html` | page front matter | banner title and subtitle with HTML such as `<br>`; the plain `title` and `excerpt` still feed the browser tab, search and sharing |
 | `_data/navigation.yml` | site | the nav links; add `new_window: true` to an item to open it in a new window |
